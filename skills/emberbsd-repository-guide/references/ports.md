@@ -53,6 +53,8 @@ and its removal condition; do not label the restricted result fully supported.
 | TinyGo | Build a Wasm/WASI program and run it with a compatible runtime; separately compile selected MCU targets and distinguish compilation from flashing or a board test |
 | Ordinary port | Upstream tests, regression for each local fix, staged package/install checks and a meaningful user workflow |
 | Shared library | Affected direct and transitive consumers, loader identity, clean shutdown and repeated use where lifetime changed |
+| Model engine | Installed C/C++ consumer, selected execution provider, known numerical output, invalid model/input rejection and bounded execution |
+| Streaming audio/video | Explicit backend, actual samples/frames and timestamps, state across input chunks, end-of-stream and damaged-input handling |
 
 Keep real exit statuses. Do not accept stale output from a failed build, suppress
 unexplained warnings, replace unavailable behavior with success stubs, or report
@@ -94,6 +96,37 @@ path. Reboots and device writes must be within the task's authorized scope.
   This is source-probe evidence, not pkgsrc packaging, camera/GNSS hardware
   support or a full upstream OpenCV/Eigen test run. Recheck prerequisites for
   the actual boot mode; do not prescribe remounting on every gpsd failure.
+
+- **Current media on NetBSD AArch64:** FFmpeg 9.0.2 needs explicit PIC for
+  shared libraries. OpenCV 5.0.0 needs the accepted FFmpeg 9 API backport and
+  a local guard fix enabling its existing POSIX filesystem path on NetBSD;
+  otherwise GStreamer capture can fail at `exists()` after a successful build.
+  The [media provenance and regressions](https://github.com/neonix20b/EmberBSD-Ports/blob/aed5293/probes/media/PROVENANCE.md)
+  record each change. Both installed videoio backends passed file workflows
+  on 2026-10-07. Recheck newer upstream releases before carrying these changes
+  forward. The profile excludes V4L because of separate header incompatibility;
+  it does not establish camera capture or justify silently dropping a camera
+  backend from a task that requires it.
+- **GLib metadata and runtime ABI:** tested GLib 2.88.1 used base libintl,
+  while bare `-lintl` in pkg-config selected an additional pkgsrc ABI. The
+  [media recipe](https://github.com/neonix20b/EmberBSD-Ports/blob/aed5293/probes/media/build.sh)
+  checks ELF dependencies before correcting a private metadata copy. Verify
+  the actual package and loaded libraries; do not apply this correction to
+  every GLib installation or disguise ABIs with symlinks. Remove it when
+  the selected package metadata agrees with its real dependency.
+- **Complete frames do not prove a complete container:** the media regression
+  originally accepted Matroska with a truncated trailer because all frames
+  decoded. For a trusted fixture, compare its known length and diagnostics as
+  well as pixels, timestamps and EOF. Do not claim a general container validator
+  from this bounded fixture check.
+- **RNNoise 0.2 ARM build:** the release references an absent Opus header.
+  The accepted upstream fix
+  [372f7b4b](https://github.com/xiph/rnnoise/commit/372f7b4b76cde4ca1ec4605353dd17898a99de38)
+  restores the ARM build using RNNoise's own equivalents. Preserve its author
+  and unchanged patch rather than disabling NEON or supplying success stubs.
+  Recheck whether the selected release already contains it. A deterministic
+  sample/state contract establishes execution, not noise-reduction quality;
+  the latter needs a suitable speech/noise corpus and explicit metrics.
 
 When those sources advance, recheck the affected case and update this reference.
 Keep detailed recipes and executable regressions with their owning port.

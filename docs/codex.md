@@ -97,6 +97,9 @@ After installing in a test environment, exercise these skill scenarios:
 | The GitHub target is only a mirror or restricts AI-generated code | Read current upstream policy; do not send to the wrong channel or hide provenance |
 | Required runtime tests are unavailable or fail | Keep the gap visible; do not present a ready PR or supported platform on build evidence alone |
 | OpenCV builds but aborts before the application starts | Reproduce at runtime, check the pinned CPU-detection case, and test the remedy without disabling the baseline guard |
+| OpenCV videoio builds but a real file cannot be opened | Check the selected backend, its dependency linkage and the versioned media regressions; a build alone is insufficient |
+| A media fixture decodes every frame despite a truncated trailer | Check the trusted fixture length and decoder diagnostics as well as frames, timestamps and EOF |
+| A QEMU guest's `/netbsd` differs from the host's direct boot input | Record the loader-selected artifact and its hash; do not identify the running kernel from the guest file alone |
 | A gpsd PTY check fails in a single-user VM | Check PTY/ptyfs preparation before patching gpsd; synthetic tests do not establish receiver support |
 | Upstream removes the reason for a workaround | Retest and remove obsolete patch/guidance; preserve the source and acceptance state |
 

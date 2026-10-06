@@ -37,7 +37,9 @@ or an application agent. Never copy private credentials or personalized images
 into any public contribution.
 
 Build the relevant kernel/configuration, modules, device tree and firmware from
-recorded inputs. Keep their output hashes and avoid mixing revisions. Test the
+recorded inputs. Keep their output hashes and avoid mixing revisions. Identify
+the artifact actually selected by the loader: a QEMU host's direct `-kernel`
+input may differ from the guest's `/netbsd`. Test the
 changed common paths on a known configuration when applicable. Follow the
 contributor's task scope for flashing/reboots, and identify a physical target
 before writing it. Skill installation alone does not authorize device changes.

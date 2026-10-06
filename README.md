@@ -4,7 +4,7 @@ Skills for people building applications with
 [EmberBSD](https://github.com/apovalixin/EmberBSD) and their AI coding assistants,
 packaged as an installable Codex plugin and a Git-backed plugin marketplace.
 
-Version **0.3.0** includes one skill with focused supporting references:
+Version **0.3.1** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
@@ -86,7 +86,7 @@ codex plugin add emberbsd-development@ember-agent-skills
 
 The first command registers the source, the second lists its plugins, and the
 third installs the selected plugin. The listing should contain
-`emberbsd-development@ember-agent-skills` at version `0.3.0`.
+`emberbsd-development@ember-agent-skills` at version `0.3.1`.
 Start a new conversation in your application project after installation.
 In the desktop app, check the Plugins view for the installed package.
 
@@ -146,6 +146,7 @@ skills/emberbsd-repository-guide/
   SKILL.md                         Skill instructions and discovery metadata
   agents/openai.yaml               Codex skill presentation
   references/developing-applications.md  User application workflow and scope
+  references/adding-boards.md       Board bring-up, evidence and contribution workflow
   references/repositories.md       Public repository ownership map
   references/ports.md              Current tools, porting checks and verified cases
   references/contributions.md      Tested EmberBSD/upstream submission workflow
