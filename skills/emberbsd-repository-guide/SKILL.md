@@ -1,12 +1,18 @@
 ---
 name: emberbsd-repository-guide
-description: "Guide EmberBSD development, ports, dependency upgrades, and tested contributions. Use when starting work in the OS, Ports, Examples, Runtime, SDK, or Agent-Skills repositories, preparing an upstream contribution, or checking an EmberBSD support claim."
+description: "Guide applications targeting EmberBSD, ports, dependency upgrades, and tested contributions. Use when developing an EmberBSD application in a user's own repository, changing an ecosystem component, preparing an upstream contribution, or checking an EmberBSD support claim."
 ---
 
 # EmberBSD repository guide
 
 Establish where a change belongs and what the current sources actually support.
 Use this guide before selecting an EmberBSD build command, API, or example.
+
+These are instructions for EmberBSD users and external contributors. They do
+not confer maintainer privileges or replace the user's project instructions.
+For an application in the user's own repository, read
+[developing applications](references/developing-applications.md). Keep its code
+there; route reusable fixes and ports to the owning EmberBSD repository.
 
 ## Locate the owner
 
@@ -38,11 +44,12 @@ identified checkout.
 
 ## Make and validate the change
 
-Follow the target project's conventions and task authorization. Use English in
-public source, documentation, comments, and commit messages. Preserve upstream
-licenses and attribution. Use NetBSD KNF for C where required by the target.
-New EmberBSD utilities, tests, and examples must not introduce Python; account
-honestly for existing upstream dependencies.
+Follow the target project's conventions and task authorization. Contributions
+to public EmberBSD repositories use English in source, documentation, comments,
+and commit messages. Preserve upstream licenses and attribution. Use NetBSD
+KNF for C where required by the target. New EmberBSD utilities, tests, and
+examples must not introduce Python; account honestly for existing upstream
+dependencies. Independently owned applications retain their own conventions.
 
 For a port or dependency upgrade, read [the Ports workflow](references/ports.md).
 Use current stable upstream tools and repair incompatibilities through Ports.
@@ -64,9 +71,12 @@ Public examples and reports must work without private configuration or secrets.
 
 ## Contribute and preserve the lesson
 
-After relevant tests pass, prepare and open a focused PR for a completed fix or
-port in the owning EmberBSD repository. Offer reusable changes to the original
-upstream too, following [the contribution workflow](references/contributions.md).
+For an authorized contribution, after relevant tests pass, open a focused PR
+from a contribution branch for the completed fix or port in its owning EmberBSD
+repository. Do not treat ordinary application development as permission to
+publish the user's project. Prepare reusable upstream changes too; submit them
+when the task authorizes that destination, following
+[the contribution workflow](references/contributions.md).
 Use the accepting project's real submission channel and current AI/provenance
 rules; a GitHub mirror is not necessarily a PR destination. Do not auto-merge.
 Honor explicit task-specific publication instructions and the host's permissions.
@@ -77,7 +87,7 @@ tested revision, affected versions, and condition for removing the workaround.
 Replace obsolete guidance; do not turn a temporary observation into a universal
 ban. See [maintaining this guidance](references/maintenance.md).
 
-Report the owning repository, changes or findings, checks actually run, and
+Report the owning repository, changes or findings, checks actually run,
 remaining gaps, and PR/submission links with their actual status. If a required
-checkout or tool is unavailable, state the exact
-limitation rather than implying that validation passed.
+checkout or tool is unavailable, state the exact limitation rather than
+implying that validation passed.

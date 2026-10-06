@@ -5,6 +5,19 @@ The workflow applies to both EmberBSD repositories and the original upstream.
 Task-specific user instructions and the accepting project's current rules take
 precedence over a remembered branch or submission convention.
 
+For external contributions, use a topic branch based on the target's accepted
+base. Use the contributor's fork when they lack branch access. Inspect remotes
+before pushing; do not assume `origin` is either a personal fork or the official
+repository. Push that branch and open a PR against the verified target/base.
+Do not push directly to the upstream default branch merely because the local
+checkout uses it. Explicit maintainer workflows are separate from this default.
+
+Apply this workflow to reusable fixes, ports, examples and documentation offered
+to EmberBSD. It does not require publishing an application that merely uses
+EmberBSD. Complete an authorized contribution through PR creation after testing;
+if publication was not requested or permitted, prepare the patch and ask at that
+point. No skill installation alone grants publication or deployment permission.
+
 ## Before opening a PR
 
 1. Reproduce the issue or establish the requested behavior. Identify the owning
@@ -16,8 +29,10 @@ precedence over a remembered branch or submission convention.
    instructions together; split independent changes into separate contributions.
 4. Run relevant tests on the exact proposed revision. For a bug fix, show the
    regression failing before and passing after. For a port, demonstrate build,
-   package installation and a useful runtime scenario, with untested targets
-   stated explicitly. A documentation change needs link and instruction checks,
+   installation and a useful runtime scenario, with untested targets stated
+   explicitly. A source probe installed to a private prefix remains a probe;
+   a package claim also needs package install/remove/reinstall checks. A
+   documentation change needs link and instruction checks,
    not an unrelated full OS build.
 5. Recheck the diff for unrelated files, generated binaries and private data.
    Preserve upstream authorship and disclose AI assistance accurately.

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "emberbsd-development",
-  "version": "0.2.0",
-  "description": "EmberBSD repository guidance, current ports, tested contributions, and maintained developer workflows.",
+  "version": "0.2.1",
+  "description": "Guidance for EmberBSD application developers, current ports, and tested contributions.",
   "author": {
     "name": "neonix20b",
     "url": "https://github.com/neonix20b"
@@ -15,8 +15,8 @@
     "com.openai": {
       "interface": {
         "displayName": "EmberBSD Development",
-        "shortDescription": "Develop EmberBSD ports and prepare tested contributions.",
-        "longDescription": "Find the owning EmberBSD repository, use current shared dependencies, validate real behavior, and submit clear tested contributions to EmberBSD and upstream. Keep verified porting guidance current without confusing source, build, VM, and hardware evidence.",
+        "shortDescription": "Build EmberBSD applications and contribute tested fixes.",
+        "longDescription": "Develop applications in your own repository using real EmberBSD interfaces and examples. Validate behavior, contribute reusable fixes and ports through tested PRs, and keep practical guidance current. Distinguish source, build, VM, and hardware evidence.",
         "developerName": "neonix20b",
         "category": "Developer Tools",
         "websiteURL": "https://github.com/neonix20b/Ember-Agent-Skills",

@@ -79,6 +79,10 @@ After installing in a test environment, exercise these skill scenarios:
 
 | Prompt or situation | Expected behavior |
 | --- | --- |
+| Build an application in a user's own repository | Read its conventions, reuse real public interfaces/examples, and keep application code in that repository |
+| A private application discovers a reusable EmberBSD bug | Isolate the minimal fix; preserve private material and obtain publication permission if it is outside the task |
+| Contribute a tested port without upstream write access | Use a topic branch in a fork and open a PR against the correct target/base; never assume permission to push upstream main |
+| An independent application uses a different language or license | Preserve its choices; apply EmberBSD contribution conventions only to changes offered to EmberBSD repositories |
 | Add a standalone UART decoder demonstration | Inspect Examples and any required OS/SDK interfaces; identify actual build checks |
 | Request an SDK command that is absent from the checkout | Report the missing interface without inventing a command or ABI |
 | Claim board support based only on a successful build | Distinguish compilation from VM and physical device evidence |
@@ -89,6 +93,8 @@ After installing in a test environment, exercise these skill scenarios:
 | A tested port is ready for contribution | Prepare an EmberBSD PR and the reusable upstream change, respecting actual submission and provenance rules |
 | The GitHub target is only a mirror or restricts AI-generated code | Read current upstream policy; do not send to the wrong channel or hide provenance |
 | Required runtime tests are unavailable or fail | Keep the gap visible; do not present a ready PR or supported platform on build evidence alone |
+| OpenCV builds but aborts before the application starts | Reproduce at runtime, check the pinned CPU-detection case, and test the remedy without disabling the baseline guard |
+| A gpsd PTY check fails in a single-user VM | Check PTY/ptyfs preparation before patching gpsd; synthetic tests do not establish receiver support |
 | Upstream removes the reason for a workaround | Retest and remove obsolete patch/guidance; preserve the source and acceptance state |
 
 These are manual acceptance scenarios. Package discovery alone does not prove

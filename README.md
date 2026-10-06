@@ -1,17 +1,39 @@
 # Ember Agent Skills
 
-Developer skills for [EmberBSD](https://github.com/apovalixin/EmberBSD), packaged
-as an installable Codex plugin and a Git-backed plugin marketplace.
+Skills for people building applications with
+[EmberBSD](https://github.com/apovalixin/EmberBSD) and their AI coding assistants,
+packaged as an installable Codex plugin and a Git-backed plugin marketplace.
 
-Version **0.2.0** includes one skill with focused supporting references:
+Version **0.2.1** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
-| [`emberbsd-repository-guide`](skills/emberbsd-repository-guide/SKILL.md) | Locate the owner, use current tools, adapt and test ports, prepare contributions, and distinguish source, build, VM, and hardware evidence |
+| [`emberbsd-repository-guide`](skills/emberbsd-repository-guide/SKILL.md) | Develop applications, locate real interfaces, test ports, and contribute reusable fixes with clear evidence |
 
 This version provides repository and contribution workflows. SDK scaffolding, Wasm packaging,
 documentation search through MCP, and hardware tools are future integrations.
 No MCP server, account connection, or device access is included.
+
+## Rules for users and their assistants
+
+Start with [developing an application](skills/emberbsd-repository-guide/references/developing-applications.md).
+These public instructions work without the maintainers' private wiki or lab.
+The repository's root `AGENTS.md` governs work on this plugin's sources; the
+installed workflow is in `SKILL.md` and its bundled references. Do not copy our
+root `AGENTS.md` over your application's instructions.
+
+| Your task | Assistant workflow |
+| --- | --- |
+| Build an application using EmberBSD | Work in your repository, follow your conventions, use actual APIs/examples, and document tested build/run commands |
+| Fix a reusable defect or add a port | Reproduce, implement, test, and open a focused PR from a contribution branch or fork when publication is authorized |
+| Find a bug without a tested fix | Preserve a minimal reproducer and describe the gap; use an authorized issue/report instead of an empty PR |
+| Discover a useful workaround or an obsolete instruction | Update the owning documentation and relevant skill reference with evidence, affected versions and a removal condition |
+
+Contributions to EmberBSD use English, retain licenses and provenance, and
+include relevant checks. Independently owned applications keep their own
+language and licensing choices. A successful build, VM test and physical-board
+test support different claims. See the [contribution workflow](skills/emberbsd-repository-guide/references/contributions.md)
+for PRs to EmberBSD and submissions to the original upstream.
 
 ## Install in Codex
 
@@ -26,7 +48,9 @@ codex plugin add emberbsd-development@ember-agent-skills
 ```
 
 The first command registers the source, the second lists its plugins, and the
-third installs the selected plugin. Start a new conversation after installation.
+third installs the selected plugin. The listing should contain
+`emberbsd-development@ember-agent-skills` at version `0.2.1`.
+Start a new conversation in your application project after installation.
 In the desktop app, check the Plugins view for the installed package.
 
 | Name | Meaning |
@@ -38,8 +62,10 @@ In the desktop app, check the Plugins view for the installed package.
 
 Try a prompt such as:
 
-> Use $emberbsd-repository-guide to decide where a new UART decoder example
-> belongs and which interfaces and checks already exist.
+> Use $emberbsd-repository-guide to build a UART decoder in my application
+> repository for EmberBSD AArch64. Find a suitable public example, check the
+> available interfaces, and document how to build and test it with synthetic
+> input. Report separately what still needs a physical board.
 
 Codex may also select the skill from its description when an EmberBSD task
 matches. The installed host controls skill selection and available tools.
@@ -48,7 +74,7 @@ Additional starting prompts:
 
 > Update this EmberBSD port to the current stable release. Use
 > $emberbsd-repository-guide, inspect pkgsrc and pkgsrc-wip, fix compatibility,
-> and test the package and a runtime scenario before opening the contribution.
+> and test the package and a runtime scenario before opening a PR from my fork.
 
 > Use $emberbsd-repository-guide to turn this reproduced build failure into a
 > tested fix, prepare the EmberBSD and upstream submissions, and update the
@@ -57,6 +83,12 @@ Additional starting prompts:
 The workflow records original sources and SHA256, keeps a coherent toolchain,
 and requires real test evidence before a ready PR. Upstream submission follows
 the target project's actual channel and AI-assistance rules.
+
+If the plugin command is unavailable, check `codex --version` and
+`codex plugin --help`; use a host that supports this package format. If the
+skill is missing after installation, check the installed package in Plugins
+and start a new conversation. Merely cloning this repository does not install
+the skill in an unrelated application project.
 
 To refresh the Git marketplace snapshot:
 
@@ -76,6 +108,7 @@ plugin.json                        Portable plugin manifest and Codex metadata
 skills/emberbsd-repository-guide/
   SKILL.md                         Skill instructions and discovery metadata
   agents/openai.yaml               Codex skill presentation
+  references/developing-applications.md  User application workflow and scope
   references/repositories.md       Public repository ownership map
   references/ports.md              Current tools, porting checks and verified cases
   references/contributions.md      Tested EmberBSD/upstream submission workflow
@@ -111,10 +144,13 @@ skill or certify acceptance into OpenAI's public directory.
 
 See [the Codex packaging guide](docs/codex.md) before adding skills or tools.
 
-For another development assistant, load `SKILL.md` together with its bundled
-references using that client's documented skill mechanism. Only Codex discovery
-is currently verified; this repository does not claim tested Cursor or Claude
-Code installation. Keep relative reference paths intact.
+For another development assistant, use its documented Agent Skills mechanism
+to load the complete `skills/emberbsd-repository-guide/` directory, including
+references. If it only supports project instructions, explicitly ask it to read
+the checkout's `SKILL.md` and linked references. This is a manual fallback, not
+automatic discovery. Only Codex discovery is currently verified; Cursor and
+Claude Code installation have not been tested. Keep relative paths intact and
+preserve your project's existing instructions.
 
 ## License
 

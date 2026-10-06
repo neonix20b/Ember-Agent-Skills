@@ -11,6 +11,12 @@ Link them instead of maintaining a second implementation or copying full logs.
 Never require a private wiki, local machine path, credential or personal image
 to use a published skill.
 
+Maintain the public user's workflow. Do not import a maintainer's direct-push
+permissions, private lab setup or personal assistant rules into the installed
+skill. When an external contributor improves these instructions, include the
+guidance change in an Agent-Skills PR, cross-linking a separate code/port PR
+when needed. Edit a source checkout, not only the installed plugin cache.
+
 For each non-obvious workaround or compatibility case, preserve:
 
 - the symptom and cause, distinguishing confirmed cause from a hypothesis;

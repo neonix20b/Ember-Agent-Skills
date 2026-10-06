@@ -77,6 +77,23 @@ path. Reboots and device writes must be within the task's authorized scope.
   [Wayland probe](https://github.com/neonix20b/EmberBSD-Ports/tree/main/probes/wayland-utm)
   for its exact tested limits. A nested desktop or software renderer cannot
   establish hardware acceleration.
+- **OpenCV 5.0.0 on NetBSD AArch64 with GCC:** a completed build aborted before
+  `main` because runtime detection missed the required NEON/FP16 conversion
+  baseline. The [tested patch and regression](https://github.com/neonix20b/EmberBSD-Ports/blob/23975050ad678e85e56d1379107f7bbc10c0a2b7/probes/robotics-foundations/PROVENANCE.md)
+  restore baseline detection without disabling its guard. Optional FP16
+  arithmetic, DotProd, BF16 and SVE remain unadvertised. Checked 2026-10-06 in
+  an EmberBSD AArch64 VM; the patch has not been submitted upstream. Recheck
+  detection in a newer release and drop the patch when the regression passes
+  without it. Do not generalize this into disabling CPU optimizations.
+- **gpsd 3.27.5 PTY tests in a single-user VM:** missing ptyfs caused PTY
+  allocation to fail. Ordinary test-environment preparation fixed it without
+  a gpsd source patch. Check the environment before changing library code.
+  The [installed probe](https://github.com/neonix20b/EmberBSD-Ports/blob/23975050ad678e85e56d1379107f7bbc10c0a2b7/probes/robotics-foundations/README.md)
+  documents prerequisites and synthetic NMEA tests. OpenCV 5.0.0, Eigen 5.0.1
+  and gpsd 3.27.5 passed six installed-consumer checks there on 2026-10-06.
+  This is source-probe evidence, not pkgsrc packaging, camera/GNSS hardware
+  support or a full upstream OpenCV/Eigen test run. Recheck prerequisites for
+  the actual boot mode; do not prescribe remounting on every gpsd failure.
 
 When those sources advance, recheck the affected case and update this reference.
 Keep detailed recipes and executable regressions with their owning port.
