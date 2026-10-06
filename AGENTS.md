@@ -20,6 +20,13 @@ all source, documentation, comments, and commit messages.
   `--codex` to check native marketplace discovery without changing user settings.
 - Packaging checks do not prove skill quality. Review the manual scenarios in
   `docs/codex.md` when changing the skill's behavior.
+- Keep porting and contribution rules in bundled skill references, so installed
+  assistants can read them without this checkout or a private wiki. Update
+  verified cases with source revisions, test evidence and removal conditions.
+- After relevant tests pass, submit focused PRs for fixes and ports to the owning
+  EmberBSD repository and reusable changes upstream, following the accepting
+  project's current channel and AI/provenance rules. Do not auto-merge. Respect
+  explicit task-specific publication instructions and host permissions.
 - Update the plugin version when publishing package changes. Keep changes scoped,
   preserve unrelated work, and use the existing working branch and remote unless
   the user or repository protection requires another workflow.

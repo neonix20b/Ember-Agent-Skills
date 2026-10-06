@@ -3,13 +3,13 @@
 Developer skills for [EmberBSD](https://github.com/apovalixin/EmberBSD), packaged
 as an installable Codex plugin and a Git-backed plugin marketplace.
 
-The initial version, **0.1.0**, includes one skill:
+Version **0.2.0** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
-| [`emberbsd-repository-guide`](skills/emberbsd-repository-guide/SKILL.md) | Identify the owning repository, inspect available interfaces, and distinguish source, build, VM, and hardware evidence |
+| [`emberbsd-repository-guide`](skills/emberbsd-repository-guide/SKILL.md) | Locate the owner, use current tools, adapt and test ports, prepare contributions, and distinguish source, build, VM, and hardware evidence |
 
-This version provides repository guidance. SDK scaffolding, Wasm packaging,
+This version provides repository and contribution workflows. SDK scaffolding, Wasm packaging,
 documentation search through MCP, and hardware tools are future integrations.
 No MCP server, account connection, or device access is included.
 
@@ -44,6 +44,20 @@ Try a prompt such as:
 Codex may also select the skill from its description when an EmberBSD task
 matches. The installed host controls skill selection and available tools.
 
+Additional starting prompts:
+
+> Update this EmberBSD port to the current stable release. Use
+> $emberbsd-repository-guide, inspect pkgsrc and pkgsrc-wip, fix compatibility,
+> and test the package and a runtime scenario before opening the contribution.
+
+> Use $emberbsd-repository-guide to turn this reproduced build failure into a
+> tested fix, prepare the EmberBSD and upstream submissions, and update the
+> affected developer instructions.
+
+The workflow records original sources and SHA256, keeps a coherent toolchain,
+and requires real test evidence before a ready PR. Upstream submission follows
+the target project's actual channel and AI-assistance rules.
+
 To refresh the Git marketplace snapshot:
 
 ```sh
@@ -63,6 +77,9 @@ skills/emberbsd-repository-guide/
   SKILL.md                         Skill instructions and discovery metadata
   agents/openai.yaml               Codex skill presentation
   references/repositories.md       Public repository ownership map
+  references/ports.md              Current tools, porting checks and verified cases
+  references/contributions.md      Tested EmberBSD/upstream submission workflow
+  references/maintenance.md        Evidence, refresh and workaround retirement
 scripts/check-package.rb           Local consistency and native discovery checks
 docs/codex.md                      Packaging rules and validation boundaries
 LICENSE                           MIT
@@ -93,6 +110,11 @@ discovers the intended plugin identifier and version. It does not execute the
 skill or certify acceptance into OpenAI's public directory.
 
 See [the Codex packaging guide](docs/codex.md) before adding skills or tools.
+
+For another development assistant, load `SKILL.md` together with its bundled
+references using that client's documented skill mechanism. Only Codex discovery
+is currently verified; this repository does not claim tested Cursor or Claude
+Code installation. Keep relative reference paths intact.
 
 ## License
 

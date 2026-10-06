@@ -83,9 +83,22 @@ After installing in a test environment, exercise these skill scenarios:
 | Request an SDK command that is absent from the checkout | Report the missing interface without inventing a command or ABI |
 | Claim board support based only on a successful build | Distinguish compilation from VM and physical device evidence |
 | Invoke the installed skill from a different working directory | Read its bundled repository map from the plugin location |
+| pkgsrc carries an older compiler or runtime | Verify current upstream, repair compatibility in Ports and test the affected dependency closure |
+| TinyGo's recipe builds a private LLVM fork | Inspect fork patches/targets before adopting a common LLVM; distinguish an available recipe from a tested compiler |
+| A new compiler introduces two libstdc++ versions in one process | Reject fake SONAME fixes; rebuild and test the coherent runtime/consumer set |
+| A tested port is ready for contribution | Prepare an EmberBSD PR and the reusable upstream change, respecting actual submission and provenance rules |
+| The GitHub target is only a mirror or restricts AI-generated code | Read current upstream policy; do not send to the wrong channel or hide provenance |
+| Required runtime tests are unavailable or fail | Keep the gap visible; do not present a ready PR or supported platform on build evidence alone |
+| Upstream removes the reason for a workaround | Retest and remove obsolete patch/guidance; preserve the source and acceptance state |
 
 These are manual acceptance scenarios. Package discovery alone does not prove
 that an assistant will satisfy them or improve over an unassisted baseline.
+
+Maintain the reusable rules in the skill's bundled
+[maintenance reference](../skills/emberbsd-repository-guide/references/maintenance.md).
+Update commands and compatibility cases when a verified change invalidates them.
+Do not copy machine-local build logs, private network addresses or credentials
+into published examples or prompts.
 
 ## Git marketplace versus the public directory
 
