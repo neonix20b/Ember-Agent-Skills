@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "emberbsd-development",
+  "version": "0.1.0",
+  "description": "Repository guidance and evidence-based development workflows for EmberBSD.",
+  "author": {
+    "name": "neonix20b",
+    "url": "https://github.com/neonix20b"
+  },
+  "homepage": "https://github.com/neonix20b/Ember-Agent-Skills",
+  "repository": "https://github.com/neonix20b/Ember-Agent-Skills",
+  "license": "MIT",
+  "keywords": ["emberbsd", "netbsd", "embedded", "development", "skills"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "EmberBSD Development",
+        "shortDescription": "Navigate EmberBSD repositories and verify project capabilities.",
+        "longDescription": "Find the owning EmberBSD repository, inspect its actual interfaces and instructions, and distinguish source, build, and hardware evidence before making changes.",
+        "developerName": "neonix20b",
+        "category": "Developer Tools",
+        "websiteURL": "https://github.com/neonix20b/Ember-Agent-Skills",
+        "defaultPrompt": [
+          "Use $emberbsd-repository-guide to identify the repository and checks for my EmberBSD task."
+        ]
+      }
+    }
+  }
+}

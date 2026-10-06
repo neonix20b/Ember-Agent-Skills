@@ -1,0 +1,4 @@
+interface:
+  display_name: "EmberBSD Repository Guide"
+  short_description: "Find the owning EmberBSD project and verify available interfaces"
+  default_prompt: "Use $emberbsd-repository-guide to find the owning repository and validation steps for my EmberBSD task."
