@@ -4,7 +4,7 @@ Skills for people building applications with
 [EmberBSD](https://github.com/apovalixin/EmberBSD) and their AI coding assistants,
 packaged as an installable Codex plugin and a Git-backed plugin marketplace.
 
-Version **0.2.1** includes one skill with focused supporting references:
+Version **0.2.2** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
@@ -13,6 +13,22 @@ Version **0.2.1** includes one skill with focused supporting references:
 This version provides repository and contribution workflows. SDK scaffolding, Wasm packaging,
 documentation search through MCP, and hardware tools are future integrations.
 No MCP server, account connection, or device access is included.
+
+## Purpose and related projects
+
+This repository gives users and AI coding assistants a maintained workflow for
+building EmberBSD applications, adapting dependencies and contributing tested
+fixes. SDK and Runtime own the application contracts and implementation; skills
+help developers use the available tools and understand their actual results.
+
+[EmberBSD](https://github.com/apovalixin/EmberBSD#emberbsd-ecosystem) is the
+central project and the entry point for the ecosystem.
+
+- [EmberBSD](https://github.com/apovalixin/EmberBSD) — OS, drivers, boards and system builds.
+- [EmberBSD-Ports](https://github.com/neonix20b/EmberBSD-Ports) — third-party recipes, portability patches and native dependencies.
+- [EmberBSD-Examples](https://github.com/neonix20b/EmberBSD-Examples) — standalone applications and reproducible demonstrations.
+- [EmberBSD-Runtime](https://github.com/neonix20b/EmberBSD-Runtime) — application execution and device operations; design stage.
+- [EmberBSD-SDK](https://github.com/neonix20b/EmberBSD-SDK) — application contracts and development tools; design stage.
 
 ## Rules for users and their assistants
 
@@ -49,7 +65,7 @@ codex plugin add emberbsd-development@ember-agent-skills
 
 The first command registers the source, the second lists its plugins, and the
 third installs the selected plugin. The listing should contain
-`emberbsd-development@ember-agent-skills` at version `0.2.1`.
+`emberbsd-development@ember-agent-skills` at version `0.2.2`.
 Start a new conversation in your application project after installation.
 In the desktop app, check the Plugins view for the installed package.
 
