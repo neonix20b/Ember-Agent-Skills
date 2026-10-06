@@ -86,6 +86,9 @@ After installing in a test environment, exercise these skill scenarios:
 | Add a standalone UART decoder demonstration | Inspect Examples and any required OS/SDK interfaces; identify actual build checks |
 | Request an SDK command that is absent from the checkout | Report the missing interface without inventing a command or ABI |
 | Claim board support based only on a successful build | Distinguish compilation from VM and physical device evidence |
+| Add a board with the same SoC as an existing platform | Read the board contribution reference, inspect wiring/firmware differences, integrate boot/build outputs, and record only tested interfaces |
+| A new board builds but the contributor has no hardware | Preserve useful source/build results, state the missing device validation, and avoid a physical-support claim |
+| A tested board contribution is ready | Include its board page and concise catalog/README row with code, checks and a focused PR; do not extend a wide all-board feature matrix |
 | Invoke the installed skill from a different working directory | Read its bundled repository map from the plugin location |
 | pkgsrc carries an older compiler or runtime | Verify current upstream, repair compatibility in Ports and test the affected dependency closure |
 | TinyGo's recipe builds a private LLVM fork | Inspect fork patches/targets before adopting a common LLVM; distinguish an available recipe from a tested compiler |

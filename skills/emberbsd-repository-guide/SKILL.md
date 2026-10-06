@@ -1,6 +1,6 @@
 ---
 name: emberbsd-repository-guide
-description: "Guide applications targeting EmberBSD, ports, dependency upgrades, and tested contributions. Use when developing an EmberBSD application in a user's own repository, changing an ecosystem component, preparing an upstream contribution, or checking an EmberBSD support claim."
+description: "Guide EmberBSD applications, board bring-up, ports, dependency upgrades, and tested contributions. Use when developing an EmberBSD application, adding or validating a board, changing an ecosystem component, preparing a contribution, or checking a support claim."
 ---
 
 # EmberBSD repository guide
@@ -56,6 +56,11 @@ Use current stable upstream tools and repair incompatibilities through Ports.
 The age of a pkgsrc snapshot does not set EmberBSD's target version. Keep one
 coherent dependency set and rebuild affected consumers instead of hiding ABI
 failures behind library symlinks or a permanent old version per application.
+
+For a new board, platform adaptation or hardware-validation contribution, read
+[adding boards](references/adding-boards.md). Use the OS's board catalog and
+contribution guide; include boot/build integration and evidence for each claimed
+interface. Shared silicon is not proof of a second board's support.
 
 Choose checks that demonstrate the requested behavior. Distinguish inspected
 source, a successful build, contract tests, a VM boot, and a physical board test.

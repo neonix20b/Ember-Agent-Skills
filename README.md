@@ -4,11 +4,11 @@ Skills for people building applications with
 [EmberBSD](https://github.com/apovalixin/EmberBSD) and their AI coding assistants,
 packaged as an installable Codex plugin and a Git-backed plugin marketplace.
 
-Version **0.2.2** includes one skill with focused supporting references:
+Version **0.3.0** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
-| [`emberbsd-repository-guide`](skills/emberbsd-repository-guide/SKILL.md) | Develop applications, locate real interfaces, test ports, and contribute reusable fixes with clear evidence |
+| [`emberbsd-repository-guide`](skills/emberbsd-repository-guide/SKILL.md) | Develop applications, add boards, test ports, and contribute reusable fixes with clear evidence |
 
 This version provides repository and contribution workflows. SDK scaffolding, Wasm packaging,
 documentation search through MCP, and hardware tools are future integrations.
@@ -41,6 +41,7 @@ root `AGENTS.md` over your application's instructions.
 | Your task | Assistant workflow |
 | --- | --- |
 | Build an application using EmberBSD | Work in your repository, follow your conventions, use actual APIs/examples, and document tested build/run commands |
+| Add or validate your board | Inspect the nearest platform, integrate kernel/boot/build changes, record hardware evidence, and contribute a board page through a tested PR |
 | Fix a reusable defect or add a port | Reproduce, implement, test, and open a focused PR from a contribution branch or fork when publication is authorized |
 | Find a bug without a tested fix | Preserve a minimal reproducer and describe the gap; use an authorized issue/report instead of an empty PR |
 | Discover a useful workaround or an obsolete instruction | Update the owning documentation and relevant skill reference with evidence, affected versions and a removal condition |
@@ -50,6 +51,26 @@ include relevant checks. Independently owned applications keep their own
 language and licensing choices. A successful build, VM test and physical-board
 test support different claims. See the [contribution workflow](skills/emberbsd-repository-guide/references/contributions.md)
 for PRs to EmberBSD and submissions to the original upstream.
+
+## Add your board
+
+Developers can use this package to bring their own board to EmberBSD. Start with
+the [board catalog](https://github.com/apovalixin/EmberBSD/tree/main/ember/boards)
+and [OS contribution guide](https://github.com/apovalixin/EmberBSD/blob/main/ember/boards/adding-a-board.md).
+The installed skill includes [the contributor workflow](skills/emberbsd-repository-guide/references/adding-boards.md).
+
+After installing the plugin, open your EmberBSD checkout and ask, for example:
+
+> Use $emberbsd-repository-guide to add my board to EmberBSD. It is [model and
+> revision] with [SoC], booting through [firmware]. I have [serial console and
+> hardware access]. Compare it with existing support, implement the required
+> changes, test the available hardware, document the limits, and open a PR.
+
+The workflow covers kernel and device-tree/ACPI changes, firmware/boot selection,
+build outputs, validation and public documentation. Your board receives a short
+catalog entry and its own capability page. A shared SoC or successful build alone
+does not establish hardware support. Firmware, credentials and personalized
+images remain subject to their actual licenses and your publication scope.
 
 ## Install in Codex
 
@@ -65,7 +86,7 @@ codex plugin add emberbsd-development@ember-agent-skills
 
 The first command registers the source, the second lists its plugins, and the
 third installs the selected plugin. The listing should contain
-`emberbsd-development@ember-agent-skills` at version `0.2.2`.
+`emberbsd-development@ember-agent-skills` at version `0.3.0`.
 Start a new conversation in your application project after installation.
 In the desktop app, check the Plugins view for the installed package.
 
