@@ -2,7 +2,7 @@
 
 Read this for third-party software, dependency upgrades, or build failures.
 The owning source of recipes and validation is
-[EmberBSD-Ports](https://github.com/neonix20b/EmberBSD-Ports), not this skill.
+[EmberBSD-Ports](https://github.com/oxtech-ember/EmberBSD-Ports), not this skill.
 
 ## Choose and pin the source
 
@@ -76,7 +76,7 @@ path. Reboots and device writes must be within the task's authorized scope.
   native EmberBSD execution require testing; recipe presence proves neither.
 - **Graphics evidence:** software EGL readback, KMS scanout, native Wayland
   input, and host GPU rendering are separate claims. See the current
-  [Wayland probe](https://github.com/neonix20b/EmberBSD-Ports/tree/main/probes/wayland-utm)
+  [Wayland probe](https://github.com/oxtech-ember/EmberBSD-Ports/tree/main/probes/wayland-utm)
   for its exact tested limits. A nested desktop or software renderer cannot
   establish hardware acceleration.
 - **OpenCV 5.0.0 on NetBSD AArch64 with GCC:** a completed build aborted before

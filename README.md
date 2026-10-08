@@ -1,10 +1,10 @@
 # Ember Agent Skills
 
 Skills for people building applications with
-[EmberBSD](https://github.com/apovalixin/EmberBSD) and their AI coding assistants,
+[EmberBSD](https://github.com/oxtech-ember/EmberBSD) and their AI coding assistants,
 packaged as an installable Codex plugin and a Git-backed plugin marketplace.
 
-Version **0.3.1** includes one skill with focused supporting references:
+Version **0.3.2** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
@@ -21,14 +21,14 @@ building EmberBSD applications, adapting dependencies and contributing tested
 fixes. SDK and Runtime own the application contracts and implementation; skills
 help developers use the available tools and understand their actual results.
 
-[EmberBSD](https://github.com/apovalixin/EmberBSD#emberbsd-ecosystem) is the
+[EmberBSD](https://github.com/oxtech-ember/EmberBSD#emberbsd-ecosystem) is the
 central project and the entry point for the ecosystem.
 
-- [EmberBSD](https://github.com/apovalixin/EmberBSD) — OS, drivers, boards and system builds.
-- [EmberBSD-Ports](https://github.com/neonix20b/EmberBSD-Ports) — third-party recipes, portability patches and native dependencies.
-- [EmberBSD-Examples](https://github.com/neonix20b/EmberBSD-Examples) — standalone applications and reproducible demonstrations.
-- [EmberBSD-Runtime](https://github.com/neonix20b/EmberBSD-Runtime) — application execution and device operations; design stage.
-- [EmberBSD-SDK](https://github.com/neonix20b/EmberBSD-SDK) — application contracts and development tools; design stage.
+- [EmberBSD](https://github.com/oxtech-ember/EmberBSD) — OS, drivers, boards and system builds.
+- [EmberBSD-Ports](https://github.com/oxtech-ember/EmberBSD-Ports) — third-party recipes, portability patches and native dependencies.
+- [EmberBSD-Examples](https://github.com/oxtech-ember/EmberBSD-Examples) — standalone applications and reproducible demonstrations.
+- [EmberBSD-Runtime](https://github.com/oxtech-ember/EmberBSD-Runtime) — application execution and device operations; design stage.
+- [EmberBSD-SDK](https://github.com/oxtech-ember/EmberBSD-SDK) — application contracts and development tools; design stage.
 
 ## Rules for users and their assistants
 
@@ -55,8 +55,8 @@ for PRs to EmberBSD and submissions to the original upstream.
 ## Add your board
 
 Developers can use this package to bring their own board to EmberBSD. Start with
-the [board catalog](https://github.com/apovalixin/EmberBSD/tree/main/ember/boards)
-and [OS contribution guide](https://github.com/apovalixin/EmberBSD/blob/main/ember/boards/adding-a-board.md).
+the [board catalog](https://github.com/oxtech-ember/EmberBSD/tree/main/ember/boards)
+and [OS contribution guide](https://github.com/oxtech-ember/EmberBSD/blob/main/ember/boards/adding-a-board.md).
 The installed skill includes [the contributor workflow](skills/emberbsd-repository-guide/references/adding-boards.md).
 
 After installing the plugin, open your EmberBSD checkout and ask, for example:
@@ -79,14 +79,14 @@ command syntax were checked with **Codex CLI 0.160.1**. Native discovery was
 verified without installing into the maintainer's saved configuration.
 
 ```sh
-codex plugin marketplace add neonix20b/Ember-Agent-Skills --ref main
+codex plugin marketplace add oxtech-ember/Ember-Agent-Skills --ref main
 codex plugin list --marketplace ember-agent-skills --available --json
 codex plugin add emberbsd-development@ember-agent-skills
 ```
 
 The first command registers the source, the second lists its plugins, and the
 third installs the selected plugin. The listing should contain
-`emberbsd-development@ember-agent-skills` at version `0.3.1`.
+`emberbsd-development@ember-agent-skills` at version `0.3.2`.
 Start a new conversation in your application project after installation.
 In the desktop app, check the Plugins view for the installed package.
 

@@ -4,8 +4,8 @@ Use this when a developer wants to bring another board to EmberBSD, adapt an
 existing platform, or publish board validation. These instructions are for
 users of the installed skill, not permissions for the EmberBSD maintainers' lab.
 
-Start with the current [board catalog](https://github.com/apovalixin/EmberBSD/tree/main/ember/boards)
-and [board contribution guide](https://github.com/apovalixin/EmberBSD/blob/main/ember/boards/adding-a-board.md).
+Start with the current [board catalog](https://github.com/oxtech-ember/EmberBSD/tree/main/ember/boards)
+and [board contribution guide](https://github.com/oxtech-ember/EmberBSD/blob/main/ember/boards/adding-a-board.md).
 Read those files in the chosen OS checkout too. The OS owns the board procedure,
 source layout, build commands and support evidence; do not maintain an alternative
 driver recipe inside this skill.
