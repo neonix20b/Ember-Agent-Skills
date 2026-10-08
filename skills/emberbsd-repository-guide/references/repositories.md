@@ -19,7 +19,8 @@ software; changes to kernel interfaces remain in the OS repository.
 Skills guide the developer's assistant. They are separate from any future agent
 running on an EmberBSD device.
 
-The Codex plugin marketplace in this repository distributes developer skills.
+The Agent Plugins package in this repository distributes developer skills.
+Its Codex marketplace catalog is one client adapter.
 An EmberBSD Wasm application catalog would distribute programs for devices and
 would use the application contracts owned by SDK and Runtime.
 

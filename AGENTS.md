@@ -7,7 +7,8 @@ all source, documentation, comments, and commit messages.
   that guidance in `SKILL.md` and bundled references; this file is for editing
   the plugin repository. Do not export private maintainer permissions, lab
   paths or personal assistant rules as requirements for users' applications.
-- Read `README.md` and `docs/codex.md` before changing plugin packaging.
+- Read `README.md` and `docs/packaging.md` before changing plugin packaging.
+  Read `docs/codex.md` when changing the Codex adapter.
 - Keep `plugin.json` as the canonical portable manifest. The marketplace entry
   identifies this plugin and points to the repository root with `./`.
 - Put each skill in `skills/<name>/SKILL.md`. Resolve bundled references relative
@@ -23,7 +24,7 @@ all source, documentation, comments, and commit messages.
 - Run `ruby scripts/check-package.rb`. With Codex available, also run it with
   `--codex` to check native marketplace discovery without changing user settings.
 - Packaging checks do not prove skill quality. Review the manual scenarios in
-  `docs/codex.md` when changing the skill's behavior.
+  `docs/packaging.md` when changing the skill's behavior.
 - Update the plugin version when publishing package changes. Keep changes scoped,
   preserve unrelated work, and use the existing working branch and remote unless
   the user or repository protection requires another workflow.

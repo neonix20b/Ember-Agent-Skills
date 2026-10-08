@@ -37,5 +37,6 @@ Discovery validates packaging; it does not demonstrate successful porting.
 
 Update the package version, README use cases and installation/refresh guidance
 when they change. Explain prerequisites, a copyable command, expected output,
-and recovery or limits where relevant. Mark other IDE integrations unverified
-until tested; portable Markdown alone does not prove client compatibility.
+and recovery or limits where relevant. Keep portable format checks separate
+from client-specific installation and behavior evidence. Record each tested
+client and version; do not infer package acceptance from a client support list.

@@ -3,6 +3,7 @@
 require 'json'
 require 'yaml'
 require 'open3'
+require 'tmpdir'
 
 ROOT = File.expand_path('..', __dir__)
 
@@ -71,8 +72,13 @@ begin
   puts "PASS: #{manifest['name']} #{manifest['version']}; #{skills.length} skill(s); local consistency"
   if ARGV == ['--codex']
     config = "marketplaces.#{catalog['name']}={source_type=\"local\",source=#{ROOT.to_json}}"
-    output, errors, status = Open3.capture3('codex', 'plugin', 'list', '--marketplace', catalog['name'],
-                                           '--available', '--json', '-c', config, chdir: ROOT)
+    # An installed older release can hide the candidate from the available list.
+    # Keep discovery independent of the user's installed plugins and settings.
+    output, errors, status = Dir.mktmpdir('ember-skills-codex-') do |profile_dir|
+      Open3.capture3({ 'CODEX_HOME' => profile_dir }, 'codex', 'plugin', 'list',
+                    '--marketplace', catalog['name'], '--available', '--json',
+                    '-c', config, chdir: ROOT)
+    end
     check(status.success?, "Codex discovery failed: #{errors}")
     result = JSON.parse(output)
     plugin_id = "#{manifest['name']}@#{catalog['name']}"
