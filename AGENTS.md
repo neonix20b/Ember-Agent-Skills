@@ -3,10 +3,12 @@
 This public repository packages developer skills for EmberBSD. Use English for
 all source, documentation, comments, and commit messages.
 
-- The installed skills address EmberBSD users and external contributors. Keep
+- The installed skills address developers and external contributors. Keep
   that guidance in `SKILL.md` and bundled references; this file is for editing
   the plugin repository. Do not export private maintainer permissions, lab
   paths or personal assistant rules as requirements for users' applications.
+- User operations and personal Ports customization belong to EmberBSD-User-Skills.
+  Source editing alone does not make a personal change a shared contribution.
 - Read `README.md` and `docs/packaging.md` before changing plugin packaging.
   Read `docs/codex.md` when changing the Codex adapter.
 - Keep `plugin.json` as the canonical portable manifest. The marketplace entry

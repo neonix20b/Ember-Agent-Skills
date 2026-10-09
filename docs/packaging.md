@@ -77,6 +77,7 @@ After installing in a test environment, exercise these skill scenarios:
 
 | Prompt or situation | Expected behavior |
 | --- | --- |
+| Operate a device or customize an existing app in personal Ports | Route to EmberBSD-User-Skills; do not require a contribution merely because source editing is involved |
 | Build an application in a user's own repository | Read its conventions, reuse real public interfaces/examples, and keep application code in that repository |
 | A private application discovers a reusable EmberBSD bug | Isolate the minimal fix; preserve private material and obtain publication permission if it is outside the task |
 | Contribute a tested port without upstream write access | Use a topic branch in a fork and open a PR against the correct target/base; never assume permission to push upstream main |

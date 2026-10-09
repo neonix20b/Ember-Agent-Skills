@@ -11,13 +11,15 @@ checkout and release documentation before relying on an implementation.
 | [EmberBSD-Runtime](https://github.com/oxtech-ember/EmberBSD-Runtime) | Application execution, installation, lifecycle, and shared device operations |
 | [EmberBSD-SDK](https://github.com/oxtech-ember/EmberBSD-SDK) | Application API/ABI, package contracts, developer tools, and compatibility checks |
 | [Ember-Agent-Skills](https://github.com/oxtech-ember/Ember-Agent-Skills) | Developer assistant instructions, tool adapters, and skill packaging |
+| [EmberBSD-User-Skills](https://github.com/oxtech-ember/EmberBSD-User-Skills) | User operations, application configuration, diagnostics, personal Ports and GitHub workflows |
 
 Examples own executable demonstrations; tutorials explain a learning sequence.
 Start from the [central project map](https://github.com/oxtech-ember/EmberBSD)
 and verify current repository contents. Ports owns adaptations to external
 software; changes to kernel interfaces remain in the OS repository.
-Skills guide the developer's assistant. They are separate from any future agent
-running on an EmberBSD device.
+This package guides development assistants. EmberBSD-User-Skills guides device
+users and their local or remote assistants, including personal source changes.
+Neither package implements an on-device agent or supplies its runtime.
 
 The Agent Plugins package in this repository distributes developer skills.
 Its Codex marketplace catalog is one client adapter.

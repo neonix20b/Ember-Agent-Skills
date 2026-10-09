@@ -1,6 +1,6 @@
 ---
 name: emberbsd-repository-guide
-description: "Guide EmberBSD applications, board bring-up, ports, dependency upgrades, and tested contributions. Use when developing an EmberBSD application, adding or validating a board, changing an ecosystem component, preparing a contribution, or checking a support claim."
+description: "Guide EmberBSD application development, board bring-up, shared ports, dependency upgrades and tested contributions. Use when developing an application, changing the OS or an ecosystem component, adding a board, contributing a shared fix or checking a development support claim. For device operation, application configuration or personal Ports customization of an existing program, use EmberBSD-User-Skills instead."
 ---
 
 # EmberBSD repository guide
@@ -8,11 +8,17 @@ description: "Guide EmberBSD applications, board bring-up, ports, dependency upg
 Establish where a change belongs and what the current sources actually support.
 Use this guide before selecting an EmberBSD build command, API, or example.
 
-These are instructions for EmberBSD users and external contributors. They do
+These are instructions for EmberBSD developers and external contributors. They do
 not confer maintainer privileges or replace the user's project instructions.
 For an application in the user's own repository, read
 [developing applications](references/developing-applications.md). Keep its code
 there; route reusable fixes and ports to the owning EmberBSD repository.
+
+Routine device operation and personal customization of an existing program
+belong to [EmberBSD-User-Skills](https://github.com/oxtech-ember/EmberBSD-User-Skills).
+Source edits and compilation alone do not turn a personal Ports task into a
+shared contribution. Keep that user's patch workflow separate; apply this
+package's contribution process only to the contribution actually requested.
 
 ## Locate the owner
 

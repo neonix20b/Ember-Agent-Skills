@@ -5,7 +5,7 @@ Skills for people building applications with
 packaged with the open [Agent Plugins](https://agent-plugins.org/) format and
 [Agent Skills](https://agentskills.io/home) for compatible development environments.
 
-Version **0.3.3** includes one skill with focused supporting references:
+Version **0.3.4** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
@@ -17,7 +17,7 @@ No MCP server, account connection, or device access is included.
 
 ## Purpose and related projects
 
-This repository gives users and AI coding assistants a maintained workflow for
+This repository gives developers and AI coding assistants a maintained workflow for
 building EmberBSD applications, adapting dependencies and contributing tested
 fixes. SDK and Runtime own the application contracts and implementation; skills
 help developers use the available tools and understand their actual results.
@@ -31,7 +31,19 @@ central project and the entry point for the ecosystem.
 - [EmberBSD-Runtime](https://github.com/oxtech-ember/EmberBSD-Runtime) — application execution and device operations; design stage.
 - [EmberBSD-SDK](https://github.com/oxtech-ember/EmberBSD-SDK) — application contracts and development tools; design stage.
 
-## Rules for users and their assistants
+## Choose the right skills
+
+| Package | Scope |
+| --- | --- |
+| **Ember-Agent-Skills** (`emberbsd-development`) | Application development, OS changes, board bring-up, shared ports and tested contributions |
+| [**EmberBSD-User-Skills**](https://github.com/oxtech-ember/EmberBSD-User-Skills) (`emberbsd-user`) | Device operation, application configuration, diagnostics, personal Ports and the user's GitHub workflows |
+
+Editing and building an existing program for personal use stays in the user
+package. It does not require a contribution PR. Move a reusable fix into this
+developer workflow when that contribution is requested. Both packages can be
+installed; choose by the intended outcome, not simply by the presence of code.
+
+## Rules for developers and their assistants
 
 Start with [developing an application](skills/emberbsd-repository-guide/references/developing-applications.md).
 These public instructions work without the maintainers' private wiki or lab.
@@ -118,8 +130,8 @@ canonical package remains the root Agent Plugins manifest.
 
 ### Validation status
 
-Local package checks and native Codex discovery pass for version **0.3.3**.
-The latest discovery check used **Codex CLI 0.162.0-alpha.2**; earlier checks
+Local package checks and native Codex discovery pass for version **0.3.4**.
+The latest discovery check used **Codex CLI 0.162.0-alpha.17.2**; earlier checks
 used 0.160.1. These checks do not install into the user's saved configuration
 or execute the skill. Installation and behavior in other clients have not
 been tested for this release.

@@ -16,7 +16,7 @@ codex plugin add emberbsd-development@ember-agent-skills
 
 The first command registers the Git catalog, the second lists its packages,
 and the third installs the chosen plugin. The listing should include
-`emberbsd-development@ember-agent-skills` at version `0.3.3`. Start a new
+`emberbsd-development@ember-agent-skills` at version `0.3.4`. Start a new
 conversation and select `$emberbsd-repository-guide`. In the desktop app,
 check the Plugins view for the installed package.
 
@@ -54,8 +54,8 @@ These files do not replace the portable manifest or `SKILL.md`.
 
 ## What was checked
 
-Native discovery passed with **Codex CLI 0.162.0-alpha.2** on **2026-10-08**
-for package **0.3.3**. Earlier package versions were checked with CLI 0.160.1.
+Native discovery passed with **Codex CLI 0.162.0-alpha.17.2** on **2026-10-09**
+for package **0.3.4**. Earlier package versions were checked with CLI 0.160.1.
 The command syntax was also inspected with the local CLI's help.
 
 ```sh
