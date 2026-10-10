@@ -127,6 +127,22 @@ path. Reboots and device writes must be within the task's authorized scope.
   Recheck whether the selected release already contains it. A deterministic
   sample/state contract establishes execution, not noise-reduction quality;
   the latter needs a suitable speech/noise corpus and explicit metrics.
+- **Cross-built network diagnostics kit:** libpcap, tcpdump, iperf3, the
+  Wireshark 4.6.8 CLI set and the native `hcisnoop` BTSnoop recorder are
+  [packaged and board-verified](https://github.com/oxtech-ember/EmberBSD-Ports/tree/main/profiles/network-diagnostics)
+  on Raspberry Pi 5: live BPF capture without kernel drops, a three-file
+  dumpcap ring buffer under load with drop accounting, TCP/UDP iperf3
+  against a LAN peer, and a real Bluetooth controller inquiry with correct
+  host/controller directions (checked 2026-10-10). The cross build needed
+  lessons that recur in other ports: pkgsrc `PKG_OPTIONS` only add to the
+  suggested set, so disable each unwanted option explicitly; recipes that
+  set `CC_FOR_BUILD=${NATIVE_CC}` need that variable pinned or their
+  build-time generators become unrunnable target binaries; `REPLACE_SH` and
+  awk substitutions bake build-host paths into target scripts unless the
+  platform tools resolve to paths valid on both sides; CMake consumers need
+  explicit target system, sysroot and find-root arguments; parser generators
+  such as lemon must be built for and run on the build host. Recheck each
+  against the current profile instead of copying the workarounds blindly.
 
 When those sources advance, recheck the affected case and update this reference.
 Keep detailed recipes and executable regressions with their owning port.

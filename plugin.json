@@ -1,7 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "emberbsd-development",
-  "version": "0.3.6",
+  "version": "0.3.7",
+  "version": "0.3.7",
   "description": "Portable Agent Skills for EmberBSD applications, board bring-up, ports, and tested contributions.",
   "author": {
     "name": "neonix20b",
