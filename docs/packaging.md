@@ -22,6 +22,7 @@ This repository also supplies optional client metadata:
 | `.agents/plugins/marketplace.json` | Catalog for Codex's marketplace loader |
 | `.claude-plugin/marketplace.json` | Catalog for the ZCode and Claude Code marketplace loaders |
 | `.claude-plugin/plugin.json` | Plugin manifest for ZCode and Claude Code; exposes `skills/` |
+| `assets/emberbsd-logo.png` | Marketplace icon referenced by the ZCode and Claude Code catalog |
 
 Client metadata does not define the skill's workflow. A client uses the
 extensions it understands. The shared package does not need a second manifest
