@@ -68,6 +68,11 @@ For a new board, platform adaptation or hardware-validation contribution, read
 contribution guide; include boot/build integration and evidence for each claimed
 interface. Shared silicon is not proof of a second board's support.
 
+For a fully static userland or fixed image, read
+[static builds](references/static-builds.md). Use the verified flag set and the
+race catalog there instead of rediscovering them; state the real trade-offs —
+static linking does not speed up boot.
+
 Choose checks that demonstrate the requested behavior. Distinguish inspected
 source, a successful build, contract tests, a VM boot, and a physical board test.
 For hardware claims, record the board, firmware, configuration, test conditions,

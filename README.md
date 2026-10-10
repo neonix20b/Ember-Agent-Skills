@@ -5,7 +5,7 @@ Skills for people building applications with
 packaged with the open [Agent Plugins](https://agent-plugins.org/) format and
 [Agent Skills](https://agentskills.io/home) for compatible development environments.
 
-Version **0.3.6** includes one skill with focused supporting references:
+Version **0.3.7** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
@@ -144,7 +144,7 @@ Codex catalog and the portable manifest remain unchanged.
 
 ### Validation status
 
-Local package checks pass for version **0.3.6**. The `.claude-plugin` catalog
+Local package checks pass for version **0.3.7**. The `.claude-plugin` catalog
 and plugin manifest were verified against the marketplace and plugin manifest
 locations and name rules that the ZCode and Claude Code loaders probe; native
 Codex discovery passed for **0.3.4** with **Codex CLI 0.162.0-alpha.17.2**
@@ -165,6 +165,7 @@ skills/emberbsd-repository-guide/
   agents/openai.yaml               Codex skill presentation
   references/developing-applications.md  User application workflow and scope
   references/adding-boards.md       Board bring-up, evidence and contribution workflow
+  references/static-builds.md       Static userland: verified flags, race catalog, verification
   references/repositories.md       Public repository ownership map
   references/ports.md              Current tools, porting checks and verified cases
   references/contributions.md      Tested EmberBSD/upstream submission workflow
