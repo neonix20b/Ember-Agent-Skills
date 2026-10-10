@@ -5,7 +5,7 @@ Skills for people building applications with
 packaged with the open [Agent Plugins](https://agent-plugins.org/) format and
 [Agent Skills](https://agentskills.io/home) for compatible development environments.
 
-Version **0.3.4** includes one skill with focused supporting references:
+Version **0.3.5** includes one skill with focused supporting references:
 
 | Skill | Purpose |
 | --- | --- |
@@ -128,18 +128,36 @@ See the [Codex installation and update guide](docs/codex.md) for its marketplace
 commands. This repository includes the catalog used by that client, while the
 canonical package remains the root Agent Plugins manifest.
 
+### Install in ZCode and Claude Code
+
+Both clients discover the repository through the bundled
+`.claude-plugin/marketplace.json` catalog. In ZCode, open
+**Settings → Plugin Management → Discover**, press **`+`**, and add the GitHub
+repository `oxtech-ember/Ember-Agent-Skills`; then install the
+**emberbsd-development** plugin from the listing. In Claude Code, use
+`/plugin marketplace add oxtech-ember/Ember-Agent-Skills` followed by
+`/plugin install emberbsd-development@ember-agent-skills`.
+
+The catalog resolves to the repository root, where
+`.claude-plugin/plugin.json` exposes the bundled `skills/` directory. The
+Codex catalog and the portable manifest remain unchanged.
+
 ### Validation status
 
-Local package checks and native Codex discovery pass for version **0.3.4**.
-The latest discovery check used **Codex CLI 0.162.0-alpha.17.2**; earlier checks
-used 0.160.1. These checks do not install into the user's saved configuration
-or execute the skill. Installation and behavior in other clients have not
-been tested for this release.
+Local package checks pass for version **0.3.5**. The `.claude-plugin` catalog
+and plugin manifest were verified against the marketplace and plugin manifest
+locations and name rules that the ZCode and Claude Code loaders probe; native
+Codex discovery passed for **0.3.4** with **Codex CLI 0.162.0-alpha.17.2**
+(earlier checks used 0.160.1). These checks do not install into the user's
+saved configuration or execute the skill. Installation and behavior in other
+clients have not been tested for this release.
 
 ## Package structure
 
 ```text
 .agents/plugins/marketplace.json   Codex marketplace catalog; points to ./
+.claude-plugin/marketplace.json    ZCode and Claude Code marketplace catalog
+.claude-plugin/plugin.json         ZCode and Claude Code plugin manifest
 plugin.json                        Agent Plugins manifest; optional client metadata
 skills/emberbsd-repository-guide/
   SKILL.md                         Skill instructions and discovery metadata
@@ -156,10 +174,10 @@ docs/codex.md                      Codex installation and metadata
 LICENSE                           MIT
 ```
 
-The Codex marketplace catalog and plugin share this repository. Other clients
-can load the portable package without using that catalog. A future
-EmberBSD Wasm marketplace would distribute device applications, a different
-kind of package.
+The Codex, ZCode and Claude Code marketplace catalogs share this repository;
+each client reads its own. Other clients can load the portable package without
+using those catalogs. A future EmberBSD Wasm marketplace would distribute
+device applications, a different kind of package.
 
 ## Validate a checkout
 

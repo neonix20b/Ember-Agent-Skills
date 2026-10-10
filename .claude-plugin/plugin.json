@@ -1,0 +1,14 @@
+{
+  "name": "emberbsd-development",
+  "version": "0.3.5",
+  "description": "Portable Agent Skills for EmberBSD applications, board bring-up, ports, and tested contributions.",
+  "author": {
+    "name": "neonix20b",
+    "url": "https://github.com/neonix20b"
+  },
+  "homepage": "https://github.com/oxtech-ember/Ember-Agent-Skills",
+  "repository": "https://github.com/oxtech-ember/Ember-Agent-Skills",
+  "license": "MIT",
+  "keywords": ["emberbsd", "netbsd", "embedded", "development", "skills", "agent-plugins"],
+  "skills": "./skills"
+}

@@ -20,6 +20,8 @@ This repository also supplies optional client metadata:
 | `plugin.json` → `extensions.com.openai` | OpenAI client presentation |
 | `skills/*/agents/openai.yaml` | Codex skill presentation |
 | `.agents/plugins/marketplace.json` | Catalog for Codex's marketplace loader |
+| `.claude-plugin/marketplace.json` | Catalog for the ZCode and Claude Code marketplace loaders |
+| `.claude-plugin/plugin.json` | Plugin manifest for ZCode and Claude Code; exposes `skills/` |
 
 Client metadata does not define the skill's workflow. A client uses the
 extensions it understands. The shared package does not need a second manifest
